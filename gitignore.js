@@ -46,6 +46,7 @@ const reduceIgnore = files => {
 };
 
 const ensureAbsolutePathForCwd = (cwd, p) => {
+	p = path.normalize(p);
 	cwd = slash(cwd);
 	if (path.isAbsolute(p)) {
 		if (p.startsWith(cwd)) {
